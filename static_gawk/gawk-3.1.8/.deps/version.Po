@@ -1,0 +1,5 @@
+version.o: version.c config.h custom.h
+
+config.h:
+
+custom.h:

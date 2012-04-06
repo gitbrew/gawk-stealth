@@ -1,0 +1,130 @@
+  Copyright (C) 2005, 2006, 2010 Free Software Foundation, Inc.
+  
+  Copying and distribution of this file, with or without modification,
+  are permitted in any medium without royalty provided the copyright
+  notice and this notice are preserved.
+
+This file lists future projects and enhancements for gawk.  Items are listed
+in roughly the order they will be done for a given release.  This file is
+mainly for use by the developers to help keep themselves on track, please
+don't bug us too much about schedules or what all this really means.
+
+With the 3.0 release, we are acknowledging that awk is not PERL, nor should
+it become PERL.  (To paraphrase Dennis Ritchie, "If you want PERL, you
+know where to get it.")
+
+The focus on the future is thus narrowed to performance and functional
+enhancements, with only minor plans for significant new features.
+
+(OK, so 3.1 had a bad case of feature-itis.  I think I'm mostly over it
+now, though. :-)
+
+In 3.1
+======
+	DONE: A PROCINFO array to replace /dev/pid, /dev/user, et al.
+
+	DONE: Provide awk profiling.
+
+	DONE: Integrate GNU NLS support.
+
+	DONE: Bring out hooks for NLS support into gawk itself.
+
+	DONE: Do a reference card.
+
+	DONE: Switch to full ANSI C and use ansi2kr.
+
+	Additional manual features:
+		DONE: Document NLS support
+
+	DONE: Add %'d for putting in commas in formatting.
+
+	DONE: Multibyte support for index, length, substr, match.
+
+For 3.1.8 + bytecode
+====================
+	Performance fixes / improvements
+
+	Change @sourcefile to @include per awk.info poll and document it
+
+	Update copyrights
+
+	Document dgawk
+
+For 4.0
+=======
+	Add a single letter option for all long options & document them.
+
+	Remove support for all unsupported systems.
+
+	Remove all old README* files.
+
+	Enable \s, \S in regexes (regcomp.c and dfa.c) and document them.
+
+	Integrate byte code changes and dgawk
+		Indirect functions
+		BEGINFILE, ENDFILE
+
+	Simplify awk.h.
+
+	Consider moving var_value info into Node_var itself
+	to reduce memory usage.
+
+	Consider removing use of and/or need for the protos.h file.
+
+	Make POSIX 2001 behavior the default for sub/gsub.
+
+	Add IPv6 support.
+
+	Gnulib?
+
+	Move to git?
+
+	Additional manual features:
+		Remove all page breaks
+		Review internal notes about reorganization
+		Full front to back read through
+
+For 4.1
+=======
+	Implement designed API for loadable modules
+
+	Redo the loadable modules interface from the awk level.
+
+	? Move the loadable modules interface to libtool.
+
+	Rework management of array index storage. (Partially DONE.)
+
+	DBM storage of awk arrays. Try to allow multiple dbm packages.
+
+	? Add an optional base to strtonum, allowing 2-36.
+
+	? Optional third argument for index indicating where to start the
+	search.
+
+	?? A RECLEN variable for fixed-length record input. PROCINFO["RS"]
+	would be "RS" or "RECLEN" depending upon what's in use.
+
+	?? Use a new or improved dfa and/or regex library.
+
+For 4.x:
+========
+	Look at ISO C 99 printf features.
+
+Probably never:
+===============
+	Do an optimization pass over parse tree?
+
+	Consider integrating Fred Fish's DBUG library into gawk.
+
+	Make 	awk '/foo/' files...	run at egrep speeds (how?)
+
+	? Have strftime() pay attention to the value of ENVIRON["TZ"]
+
+	Add a lint check if the return value of a function is used but
+	the function did not supply a value.
+
+	Additional manual features:
+		? A section on where gawk is bounded
+			regex
+			i/o
+			sun fp conversions

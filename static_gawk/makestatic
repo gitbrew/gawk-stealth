@@ -1,0 +1,12 @@
+#!/bin/bash -x
+make clean
+CC="gcc"
+CFLAGS="-m32 -march=i686 -Os -fomit-frame-pointer"
+CC=$CC CFLAGS=$CFLAGS ./configure --prefix=/usr --host=i686-pc-linux-gnu --disable-largefile \
+	--disable-largefile --disable-rpath \
+	--disable-nls --disable-lint --program-suffix=".static"
+
+make CC="$CC" CFLAGS="$CFLAGS"
+mv ./gawk ./gawk32.shared
+make CC="$CC" CFLAGS="-static $CFLAGS" LDFLAGS="-static" gawk
+strip -s -o ./gawk32.static ./gawk
